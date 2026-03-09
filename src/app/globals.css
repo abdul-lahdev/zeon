@@ -67,16 +67,26 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
-   /* --black1: #eeeeef; */
-   --dark1:#3F434D;
-   --dark2:#5C6673;
-   --dark3:#2A2D33;
-   --grey1:#c1c1c1;
-   --grey2:#EBF0F2;
-   --grey3:#3F434D80;
-   --grey4:#EDEDED;
-   --grey5:#F5F5F5;
-   --red1:#EC3235;
+  /* --black1: #eeeeef; */
+  --dark1: #3f434d;
+  --dark2: #5c6673;
+  --dark3: #2a2d33;
+  --grey1: #c1c1c1;
+  --grey2: #ebf0f2;
+  --grey3: #3f434d80;
+  --grey4: #ededed;
+  --grey5: #f5f5f5;
+  --grey6: #e9f7fd;
+  --red1: #ec3235;
+  --red2: #ef4444;
+  --red3: #ffe3e3;
+  --green1: #0aae78;
+  --green2: #e5fff7;
+  --orange1: #f5880b;
+  --orange2: #fff1df;
+  --purple1: #8c37fd;
+  --purple2: #f3eaff;
+  --blue1: #21a6e81a;
 }
 
 @theme inline {
@@ -118,8 +128,6 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-
- 
 }
 @font-face {
   font-family: "DmsSans";
