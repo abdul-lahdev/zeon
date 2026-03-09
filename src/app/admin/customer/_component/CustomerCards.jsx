@@ -33,7 +33,7 @@ export default function CustomerCards() {
 
   return (
     <>
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid grid-cols-5 gap-5 mt-3">
         {cardData.map((item, index) => (
           <div
             key={index}

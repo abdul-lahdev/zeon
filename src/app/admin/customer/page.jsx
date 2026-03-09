@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import CustomerCards from "./_component/CustomerCards";
 
+
 export default function Page() {
   return (
     <>
