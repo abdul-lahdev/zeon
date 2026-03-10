@@ -71,6 +71,7 @@
   --dark1: #3f434d;
   --dark2: #5c6673;
   --dark3: #2a2d33;
+  --dark4: #626773;
   --grey1: #c1c1c1;
   --grey2: #ebf0f2;
   --grey3: #3f434d80;
@@ -83,6 +84,7 @@
   --green1: #0aae78;
   --green2: #e5fff7;
   --green3: #D9FFF3;
+  --green4: #13975b;
   --orange1: #f5880b;
   --orange2: #fff1df;
   --purple1: #8c37fd;
@@ -230,4 +232,16 @@ span {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

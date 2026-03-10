@@ -24,7 +24,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import TableView from "./TableView";
 import GridView from "./GridView";
-import { initialData } from "@/app/constants/CustomerData";
+import { inventoryData } from "@/app/constants/ProductData";
 
 const CustomerDashboard = () => {
 
@@ -32,12 +32,12 @@ const CustomerDashboard = () => {
   const [perPage, setPerPage] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(initialData.length / perPage);
+  const totalPages = Math.ceil(inventoryData.length / perPage);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * perPage;
     const endIndex = startIndex + perPage;
-    return initialData.slice(startIndex, endIndex);
+    return inventoryData.slice(startIndex, endIndex);
   }, [currentPage, perPage]);
 
   const handlePerPageChange = (value) => {

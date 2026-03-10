@@ -5,7 +5,6 @@ import Link from "next/link"
 import CustomerInformation from "../_component/CustomerInformation"
 import RevenueCards from "../_component/RevenueCards"
 import TodaysDeliveries from "../_component/TodaysDeliveries"
-import OrderTable from "../_component/OrderTable"
 
 export default function Page() {
     return (
@@ -40,7 +39,6 @@ export default function Page() {
                         <div className='flex flex-col gap-5 overflow-x-hidden' >
                          <RevenueCards/>
                          <TodaysDeliveries/>
-                         <OrderTable/>
                         </div>
                     </div>
                 </div>
