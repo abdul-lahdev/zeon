@@ -1,18 +1,12 @@
-import { CardAction } from "@/components/ui/card";
 import {
-  CircleAlert,
   CircleAlertIcon,
   CircleCheck,
-  Package,
   Package2,
   TriangleAlert,
   UserCheck,
-  UserPlus,
-  UserRoundMinus,
-  Users,
 } from "lucide-react";
 
-export default function CustomerCards() {
+export default function ProductCards() {
   const cardData = [
     {
       name: "Total Products",

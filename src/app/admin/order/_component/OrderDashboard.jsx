@@ -13,8 +13,6 @@ import { Button } from "@/components/ui/button";
 import {
   FileText,
   Settings2,
-  LayoutGrid,
-  TableCellsSplit,
 } from "lucide-react";
 import {
   Pagination,
@@ -23,21 +21,20 @@ import {
 } from "@/components/ui/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import TableView from "./TableView";
-import GridView from "./GridView";
-import { inventoryData } from "@/app/constants/ProductData";
+import { orders } from "@/app/constants/OrderData";
 
-const CustomerDashboard = () => {
+const OrderDashboard = () => {
 
   // Paginated Data
   const [perPage, setPerPage] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(inventoryData.length / perPage);
+  const totalPages = Math.ceil(orders.length / perPage);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * perPage;
     const endIndex = startIndex + perPage;
-    return inventoryData.slice(startIndex, endIndex);
+    return orders.slice(startIndex, endIndex);
   }, [currentPage, perPage]);
 
   const handlePerPageChange = (value) => {
@@ -53,7 +50,6 @@ const CustomerDashboard = () => {
 
 
 
-  const [tableView, setTableView] = useState(true);
 
   return (
     <>
@@ -163,42 +159,12 @@ const CustomerDashboard = () => {
             >
               <Settings2 size={24} className="text-(--dark1)" />
             </Button>
-            <div className="relative flex items-center h-11 bg-[#F5F5F5] border border-[#EDEDED] rounded-[16px] px-1 w-fit cursor-pointer">
-              {/* Sliding Background Indicator */}
-              <motion.div
-                className="absolute h-9 bg-red-500 rounded-[12px] shadow-sm"
-                initial={false}
-                animate={{
-                  x: tableView ? 44 : 0,
-                  width: 42,
-                }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-
-              <div
-                onClick={() => setTableView(false)}
-                className={`relative z-10 w-11 h-full flex items-center justify-center transition-colors duration-200 ${!tableView ? "text-white" : "text-gray-400"
-                  }`}
-              >
-                <LayoutGrid size={20} />
-              </div>
-              <div
-                onClick={() => setTableView(true)}
-                className={`relative z-10 w-11 h-full flex items-center justify-center transition-colors duration-200 ${tableView ? "text-white" : "text-gray-400"
-                  }`}
-              >
-                <TableCellsSplit size={20} />
-              </div>
-            </div>
+          
           </div>
         </div>
 
         {/* --- TABLE SECTION --- */}
-        {tableView ? (
-          <TableView paginatedData={paginatedData} />
-        ) : (
-          <GridView paginatedData={paginatedData} />
-        )}
+        <TableView paginatedData={paginatedData} />
 
       </div>
 
@@ -263,4 +229,4 @@ const CustomerDashboard = () => {
   );
 };
 
-export default CustomerDashboard;
+export default OrderDashboard;

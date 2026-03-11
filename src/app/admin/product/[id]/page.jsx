@@ -2,9 +2,10 @@ import CommonLayout from "@/components/layout/CommonLayout"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, SquarePen} from "lucide-react"
 import Link from "next/link"
-import CustomerInformation from "../_component/CustomerInformation"
-import RevenueCards from "../_component/RevenueCards"
-import TodaysDeliveries from "../_component/TodaysDeliveries"
+import ProductDetails from "../_component/ProductDetails"
+import ProductRevenue from "../_component/ProductRevenue"
+import SalesChart from "../_component/SalesChart"
+import MediaGallery from "../_component/MediaGallery"
 
 export default function Page() {
     return (
@@ -13,7 +14,7 @@ export default function Page() {
             <CommonLayout>
                 <div className="bg-(--grey2) rounded-[24px] p-5">
                     <div className="flex items-center justify-between">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 items-start">
                             <Link href='/admin/customer'>
                                 <div className="size-7 flex items-center justify-center rounded-full bg-white">
                                     <ChevronLeft size={20} />
@@ -21,9 +22,9 @@ export default function Page() {
 
                             </Link>
                             <div>
-                                <h1 className="text-(--dark1) text-[24px] font-normal">Customers Details</h1>
+                                <h1 className="text-(--dark1) text-[24px] font-normal">Product Details</h1>
                                 <p className="text-(--dark1)">
-                                    here is the overview of customer purchase
+                                    here is the overview of product 
                                 </p>
                             </div>
                         </div>
@@ -34,11 +35,12 @@ export default function Page() {
                     </div>
                     <div className="mt-5 grid grid-cols-[520px_1fr] gap-5">
                         <div >
-                            <CustomerInformation/>
+                            <ProductDetails/>
                         </div>
                         <div className='flex flex-col gap-5 overflow-x-hidden' >
-                         <RevenueCards/>
-                         <TodaysDeliveries/>
+                         <ProductRevenue/>
+                         <SalesChart/>
+                         <MediaGallery/>
                         </div>
                     </div>
                 </div>

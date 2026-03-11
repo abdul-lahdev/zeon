@@ -1,9 +1,9 @@
 import CommonLayout from "@/components/layout/CommonLayout";
-import ProductDashboard from "./_component/ProductDashboard";
+import OrderDashboard from "./_component/OrderDashboard";
 import { CirclePlus, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import ProductCards from "./_component/ProductCards";
+import OrderCards from "./_component/OrderCards";
 
 
 export default function Page() {
@@ -13,7 +13,7 @@ export default function Page() {
         <div className="bg-(--grey2) rounded-[24px] p-5">
           <div className="flex items-center justify-between">
             <h1 className="text-(--dark3) text-[48px] font-normal">
-              Products
+              Customers
             </h1>
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -30,9 +30,9 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <ProductCards />
+          <OrderCards />
           <div className="mt-5">
-            <ProductDashboard />
+            <OrderDashboard />
           </div>
         </div>
       </CommonLayout>

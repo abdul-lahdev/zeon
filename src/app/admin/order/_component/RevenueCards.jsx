@@ -9,21 +9,21 @@ import {
 export default function RevenueCards() {
     const cardData = [
         {
-            name: "Total Sales",
-            total: '450',
-        },
-        {
             name: "Total Revenue",
-            total: '$72,564',
+            total: '$3,564',
         },
         {
-            name: "Conversion",
+            name: "Total Orders",
+            total: '48',
+        },
+        {
+            name: "Complete Orders",
             total: '45%',
         },
 
         {
-            name: "Orders Completed",
-            total: 'Excellent',
+            name: "Payment Behavior",
+            total: 'On time',
         },
 
     ];
