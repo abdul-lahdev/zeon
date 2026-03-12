@@ -20,27 +20,27 @@ import {
 
 const linkUrl = [
     {
-        url: '/',
+        url: '/admin/dashboard',
         name: 'Dashboard',
         icon: HomeIcon,
     },
     {
-        url: '/',
+        url: '/admin/customer',
         name: 'Customers / Pricing Engine',
         icon: HomeIcon,
     },
     {
-        url: '/',
+        url: '/admin/product',
         name: 'Products',
         icon: HomeIcon,
     },
     {
-        url: '/',
+        url: '/admin/order',
         name: 'Orders',
         icon: HomeIcon,
     },
     {
-        url: '/',
+        url: '/admin/calendar',
         name: 'Schedule',
         icon: HomeIcon,
     },
@@ -88,9 +88,11 @@ export default function Header() {
                     <div className='size-14 rounded-[16px] bg-white flex items-center justify-center cursor-pointer'>
                         <Bell size={24} className="text-(--dark1)" />
                     </div>
-                    <div className='size-14 rounded-[16px] bg-white flex items-center justify-center cursor-pointer'>
-                        <Settings size={24} className="text-(--dark1)" />
-                    </div>
+                    <Link href='/admin/setting'>
+                        <div className='size-14 rounded-[16px] bg-white flex items-center justify-center cursor-pointer'>
+                            <Settings size={24} className="text-(--dark1)" />
+                        </div>
+                    </Link>
                     <div className="flex items-center gap-2 border-l border-white pl-4 ml-3">
                         <Avatar className='size-14 border-2 border-white rounded-[8px]'>
                             <AvatarImage src="https://github.com/shadcn.png" />

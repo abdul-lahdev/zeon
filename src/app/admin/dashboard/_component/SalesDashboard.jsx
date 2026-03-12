@@ -67,19 +67,21 @@ export default function SalesDashboard() {
         <CardTitle className="text-[24px] font-normal text-(--dark1) ">
           Sales Graph
         </CardTitle>
-        <div className="flex items-center gap-2">
-          <span className="size-2 rounded-full bg-(--red1)"></span>
-          <span className="text-[16px] font-normal text-(--dark1)">Income</span>
+        <div className='flex items-center gap-3'>
+          <div className="flex items-center gap-2">
+            <span className="size-2 rounded-full bg-(--red1)"></span>
+            <span className="text-[16px] font-normal text-(--dark1)">Income</span>
+          </div>
+          <Select defaultValue="year">
+            <SelectTrigger className="w-27.5 bg-(--grey5) border border-(--grey4)">
+              <SelectValue placeholder="Select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="year">This Year</SelectItem>
+              <SelectItem value="month">This Month</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
-        <Select defaultValue="year">
-          <SelectTrigger className="w-27.5 bg-(--grey5) border border-(--grey4)">
-            <SelectValue placeholder="Select" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="year">This Year</SelectItem>
-            <SelectItem value="month">This Month</SelectItem>
-          </SelectContent>
-        </Select>
       </CardHeader>
       <CardContent className="h-87.5 w-full mt-4">
         <ResponsiveContainer width="100%" height="100%">

@@ -36,11 +36,8 @@ export default function Page() {
                             </Button>
                         </div>
                     </div>
-                    <div className="mt-5 grid grid-cols-[520px_1fr_520px] gap-5">
+                    <div className="mt-5">
                         <OrderDetails />
-                        <div>asd</div>
-                        <OrderDetails />
-
                     </div>
                 </div>
             </CommonLayout>
