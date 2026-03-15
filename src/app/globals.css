@@ -83,14 +83,14 @@
   --red3: #ffe3e3;
   --green1: #0aae78;
   --green2: #e5fff7;
-  --green3: #D9FFF3;
+  --green3: #d9fff3;
   --green4: #13975b;
   --orange1: #f5880b;
   --orange2: #fff1df;
   --purple1: #8c37fd;
   --purple2: #f3eaff;
   --blue1: #21a6e81a;
-  --blue2: #21A6E8;
+  --blue2: #21a6e8;
 }
 
 @theme inline {
@@ -234,7 +234,6 @@ span {
   }
 }
 
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -242,6 +241,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
