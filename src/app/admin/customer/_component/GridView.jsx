@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from "react";
+import React, { memo, useCallback, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Tooltip,
@@ -6,8 +6,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Copy, EllipsisVertical } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import Link from "next/link";
+import DeleteCustomerModal from "./DeleteCustomerModal";
 
 const GridView = ({ paginatedData }) => {
   const handleCopy = useCallback((text, label) => {
@@ -25,11 +36,19 @@ const GridView = ({ paginatedData }) => {
       },
     });
   }, []);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-
+      <DeleteCustomerModal
+        open={open}
+        onOpenChange={setOpen}
+        onConfirm={() => {
+          console.log("delete");
+          setOpen(false);
+        }}
+      />
       <div className="grid grid-cols-4 gap-4">
         {paginatedData.map((item) => (
           <div
@@ -62,9 +81,24 @@ const GridView = ({ paginatedData }) => {
                 </div>
 
                 <div>
-                  <div className="size-11 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
-                    <EllipsisVertical />
-                  </div>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <div className="size-11 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
+                        <EllipsisVertical />
+                      </div>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuGroup>
+                        <DropdownMenuItem asChild>
+                          <Link href="/admin/customer/12">View</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>Edit</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setOpen(true)}>
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </div>
 
