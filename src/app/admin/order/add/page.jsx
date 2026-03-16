@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, CirclePlus, SquarePen } from "lucide-react";
 import Link from "next/link";
 import AddNewOrderForm from "../_component/AddNewOrderForm";
+import OrderAddedModal from "../_component/OrderAddedModal";
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -16,6 +17,8 @@ export default function Page() {
   const prevStep = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
+
+  const [open, setOpen] = useState(false);
   return (
     <CommonLayout>
       <div className="bg-(--grey2) rounded-[24px] p-5">
@@ -77,8 +80,12 @@ export default function Page() {
             </div>
 
             {currentStep === 3 && (
-              <Button type="submit" className="h-13 rounded-[16px] px-6 ">
-                Add Customer
+              <Button
+                type="submit"
+                onClick={() => setOpen(true)}
+                className="h-13 rounded-[16px] px-6 "
+              >
+                Continue
               </Button>
             )}
           </div>
@@ -92,6 +99,14 @@ export default function Page() {
           />
         </section>
       </div>
+      <OrderAddedModal
+        open={open}
+        onOpenChange={setOpen}
+        onConfirm={() => {
+          console.log("delete");
+          setOpen(false);
+        }}
+      />
     </CommonLayout>
   );
 }
