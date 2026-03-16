@@ -10,21 +10,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import {
-  FileText,
-  Settings2,
-} from "lucide-react";
+import { FileText, Settings2 } from "lucide-react";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
 } from "@/components/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import TableView from "./TableView";
 import { orders } from "@/app/constants/OrderData";
 
 const OrderDashboard = () => {
-
   // Paginated Data
   const [perPage, setPerPage] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
@@ -48,9 +44,6 @@ const OrderDashboard = () => {
   };
   // Paginated Data
 
-
-
-
   return (
     <>
       <div className="bg-white rounded-[32px] p-4">
@@ -69,7 +62,11 @@ const OrderDashboard = () => {
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-(--dark1)" disabled value="neutral">
+                  <SelectItem
+                    className="text-(--dark1)"
+                    disabled
+                    value="neutral"
+                  >
                     Select a Value
                   </SelectItem>
                   <SelectItem className="text-(--dark1)" value="pending">
@@ -90,7 +87,11 @@ const OrderDashboard = () => {
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-(--dark1)" disabled value="neutral">
+                  <SelectItem
+                    className="text-(--dark1)"
+                    disabled
+                    value="neutral"
+                  >
                     Select a Value
                   </SelectItem>
                   <SelectItem className="text-(--dark1)" value="04-04-2026">
@@ -112,7 +113,11 @@ const OrderDashboard = () => {
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-(--dark1)" disabled value="neutral">
+                  <SelectItem
+                    className="text-(--dark1)"
+                    disabled
+                    value="neutral"
+                  >
                     Select a Value
                   </SelectItem>
                   <SelectItem className="text-(--dark1)" value="today">
@@ -131,7 +136,11 @@ const OrderDashboard = () => {
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-(--dark1)" disabled value="neutral">
+                  <SelectItem
+                    className="text-(--dark1)"
+                    disabled
+                    value="neutral"
+                  >
                     Select a Value
                   </SelectItem>
                   <SelectItem className="text-(--dark1)" value="paid">
@@ -159,13 +168,11 @@ const OrderDashboard = () => {
             >
               <Settings2 size={24} className="text-(--dark1)" />
             </Button>
-          
           </div>
         </div>
 
         {/* --- TABLE SECTION --- */}
         <TableView paginatedData={paginatedData} />
-
       </div>
 
       {/* pagination section */}
@@ -203,10 +210,11 @@ const OrderDashboard = () => {
               <PaginationItem key={page}>
                 <button
                   onClick={() => handlePageChange(page)}
-                  className={`inline-flex items-center justify-center rounded-full w-10 h-10 text-sm ${currentPage === page
-                    ? "bg-[#f1f3f5] text-slate-900"
-                    : "text-slate-600 hover:bg-slate-100"
-                    }`}
+                  className={`inline-flex items-center justify-center rounded-full w-10 h-10 text-sm ${
+                    currentPage === page
+                      ? "bg-[#f1f3f5] text-slate-900"
+                      : "text-slate-600 hover:bg-slate-100"
+                  }`}
                 >
                   {page}
                 </button>

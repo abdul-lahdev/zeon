@@ -4,7 +4,7 @@ import { CirclePlus, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import CustomerCards from "./_component/CustomerCards";
-
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -25,9 +25,11 @@ export default function Page() {
                   className="rounded-[16px] w-109 h-14 pr-13 "
                 />
               </div>
-              <Button className="h-14.5 rounded-[16px] px-4">
-                <CirclePlus size={24} className="text-white" /> New Customer
-              </Button>
+              <Link href="/admin/customer/add">
+                <Button className="h-14.5 rounded-[16px] px-4">
+                  <CirclePlus size={24} className="text-white" /> New Customer
+                </Button>{" "}
+              </Link>
             </div>
           </div>
           <CustomerCards />

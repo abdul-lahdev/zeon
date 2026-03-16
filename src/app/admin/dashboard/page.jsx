@@ -16,6 +16,7 @@ import { CustomerReport } from "./_component/CustomerReport";
 import { Button } from "@/components/ui/button";
 import OrderHistoryTable from "./_component/OrderHistoryTable";
 import UpcomingDeliveries from "./_component/UpcomingDeliveries";
+import Link from "next/link";
 export default function Page() {
   const dashboardData = [
     {
@@ -151,23 +152,25 @@ export default function Page() {
                 Create a new order or reorder items from your previous
                 deliveries.
               </p>
-              <Button className="w-max mt-5 h-14 px-5 text-[20px] font-normal">
-                <span>
-                  <CirclePlus size={24} className="text-white" />
-                </span>
-                Add Order
-              </Button>
+              <Link href="/admin/order/add">
+                <Button className="w-max mt-5 h-14 px-5 text-[20px] font-normal">
+                  <span>
+                    <CirclePlus size={24} className="text-white" />
+                  </span>
+                  Add Order
+                </Button>
+              </Link>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_438px] gap-4 mt-4">
-            <div>
+            <div className="w-full overflow-x-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-[354px_1fr_354px] gap-5">
                 <BestSellingList />
                 <SalesDashboard />
                 <CustomerReport />
               </div>
-              <div className="mt-4">
+              <div className="mt-4 overflow-x-hidden">
                 <OrderHistoryTable />
               </div>
             </div>

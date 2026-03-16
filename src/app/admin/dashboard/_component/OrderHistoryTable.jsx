@@ -6,6 +6,7 @@ import {
   Truck,
   CircleX,
 } from "lucide-react";
+
 import {
   Table,
   TableBody,
@@ -15,6 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const orders = [
   {
     id: "ORD-10425",
@@ -83,18 +85,20 @@ export default function OrderHistoryTable() {
           >
             <Download className="h-4 w-4" /> Report
           </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-(--dark2) underline"
-          >
-            View all
-          </Button>
+          <Link href="/admin/order">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-(--dark2) underline"
+            >
+              View all
+            </Button>
+          </Link>
         </div>
       </div>
 
       {/* Table Section */}
-      <Table>
+      <Table className="overflow-x-scroll">
         <TableHeader className="bg-(--grey5) rounded-[12px] h-15 bg-(--grey5)">
           <TableRow className="border-none">
             <TableHead className="rounded-l-[12px] pl-6 text-(--dark2) text-[16px] font-medium">
@@ -202,13 +206,15 @@ export default function OrderHistoryTable() {
 
               {/* Action Button */}
               <TableCell className="text-right pr-6">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="size-11 bg-(--grey5) rounded-full border border-(--grey4) text-(--dark1)"
-                >
-                  <Eye className="size-5" />
-                </Button>
+                <Link href="/admin/order/12">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="size-11 bg-(--grey5) rounded-full border border-(--grey4) text-(--dark1)"
+                  >
+                    <Eye className="size-5" />
+                  </Button>
+                </Link>
               </TableCell>
             </TableRow>
           ))}

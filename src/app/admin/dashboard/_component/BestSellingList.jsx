@@ -14,25 +14,25 @@ const bestSellingProducts = [
     id: 1,
     name: "Hand sanitizer dispenser",
     description: "Total of 3,323 Items sold.",
-    image: "/path-to-image1.png", // Aapne jo upload ki hai
+    image: "/images/dashboard/product1.png", // Aapne jo upload ki hai
   },
   {
     id: 2,
     name: "Hand sanitizer dispenser",
     description: "Manual disinfectant dispenser",
-    image: "/path-to-image2.png",
+    image: "/images/dashboard/product2.png",
   },
   {
     id: 3,
     name: "Waste Systems",
     description: "Total of 3,323 Items sold.",
-    image: "/path-to-image3.png",
+    image: "/images/dashboard/product3.png",
   },
   {
     id: 4,
     name: "Dispenser Systems",
     description: "Total of 3,323 Items sold.",
-    image: "/path-to-image4.png",
+    image: "/images/dashboard/product4.png",
   },
 ];
 
@@ -66,12 +66,12 @@ export function BestSellingList() {
           >
             <div className="flex items-center gap-4">
               {/* Product Image Container */}
-              <div className="h-16 w-16 bg-[#f3f4f6] rounded-2xl flex items-center justify-center p-2 relative overflow-hidden">
+              <div className="h-16 w-16 bg-[#EDEDED] rounded-2xl flex items-center justify-center relative overflow-hidden ">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-2"
+                  className="object-cover "
                   sizes="64px"
                   priority={index === 0}
                 />

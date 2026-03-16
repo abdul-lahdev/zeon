@@ -61,6 +61,14 @@ const deliveryEvents = [
 
 const sidebarSchedule = [
   {
+    hour: "12:00 am",
+    items: [],
+  },
+  {
+    hour: "1:00 am",
+    items: [],
+  },
+  {
     hour: "02:00 am",
     items: [
       {
@@ -72,23 +80,23 @@ const sidebarSchedule = [
     ],
   },
   {
-    hour: "08:00 am",
+    hour: "03:00 am",
     items: [
       {
         title: "Jetnetix Solutions",
         orderId: "ORD-10425",
-        delivery: "Delivery: Today, 12:00 PM",
+        delivery: "Today, 12:00 PM",
         status: "Partial",
       },
     ],
   },
   {
-    hour: "06:00 am",
+    hour: "04:00 am",
     items: [
       {
         title: "Jetnetix Solutions",
         orderId: "ORD-10425",
-        delivery: "Delivery: Today, 12:00 PM",
+        delivery: "Today, 12:00 PM",
         status: "Unpaid",
       },
     ],
@@ -171,67 +179,88 @@ export default function DeliveriesCalendarPage() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-[300px_minmax(0,1fr)]">
+    <div className="grid grid-cols-1 gap-4 xl:grid-cols-[436px_minmax(0,1fr)]">
       {/* Left Sidebar */}
-      <div className="rounded-[24px] bg-white p-4 shadow-sm ring-1 ring-[#EAEAEA]">
-        <h2 className="mb-4 text-[22px] font-medium text-[#2F2F35]">
+      <div className="rounded-[24px] bg-white shadow-sm ring-1 ring-[#EAEAEA]">
+        <h2 className="mb-4 p-3 text-[22px] border-b border-[#F5F5F5] font-regular text-[#3F434D]">
           Upcoming Deliveries
         </h2>
 
-        <div className="rounded-[18px] border border-[#ECECEC] bg-[#FCFCFC] p-3">
-          <div className="mb-3 grid grid-cols-7 gap-2 text-center text-[10px] text-[#8B8B95]">
-            <span>GMT + 5</span>
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span>Sat</span>
-          </div>
+        <div className="p-3">
+          <div className="rounded-[18px] border border-[#E9F7FD] bg-white p-3">
+            <div className="mb-3 grid grid-cols-7 gap-2 text-center text-[10px] text-[#8B8B95]">
+              <span className="rounded-[4px] py-1">GMT + 5</span>
+              <span className="bg-[#F5F5F5] rounded-[4px] py-1">Mon</span>
+              <span className="rounded-[4px] py-1">Tue</span>
+              <span className="rounded-[4px] py-1">Wed</span>
+              <span className="rounded-[4px] py-1">Thu</span>
+              <span className="rounded-[4px] py-1">Fri</span>
+              <span className="rounded-[4px] py-1">Sat</span>
+            </div>
 
-          <div className="space-y-6">
-            {sidebarSchedule.map((slot, idx) => (
-              <div key={idx} className="relative">
-                <div className="mb-2 text-[11px] text-[#8D8D98]">
-                  {slot.hour}
-                </div>
+            <div className="space-y-5 relative mt-4">
+              {sidebarSchedule.map((slot, idx) => {
+                const hasItems = slot.items && slot.items.length > 0;
 
-                <div className="absolute left-0 right-0 top-[26px] border-t border-dashed border-[#E5E7EB]" />
+                return (
+                  <div
+                    key={idx}
+                    className="grid grid-cols-[70px_1fr] items-center group"
+                  >
+                    <span className="text-[14px] font-normal text-(--dark2) mt-1">
+                      {slot.hour}
+                    </span>
 
-                <div className="mt-3 space-y-3">
-                  {slot.items.map((item, itemIndex) => (
-                    <div
-                      key={itemIndex}
-                      className="rounded-[14px] bg-[linear-gradient(90deg,#E8E0FF_0%,#F5EBD9_100%)] p-3"
-                    >
-                      <div className="mb-2 flex items-start justify-between gap-2">
-                        <span className="rounded-[6px] bg-white px-2 py-1 text-[10px] text-[#8B8B95]">
-                          {slot.hour.toUpperCase()}
-                        </span>
+                    {hasItems ? (
+                      <div className="space-y-3">
+                        {slot.items.map((item, itemIndex) => (
+                          <div
+                            key={itemIndex}
+                            className="p-3 rounded-2xl border bg-[url(/images/dashboard/smCard2.png)] bg-white bg-cover bg-center shadow-sm transition-all hover:shadow-md"
+                          >
+                            <div className="flex justify-between items-center gap-2">
+                              <span className="bg-white text-[10px] rounded-[6px] font-normal text-(--dark2) border border-(--grey5) px-2 py-0 h-7.5 inline-flex items-center">
+                                {slot.hour.toUpperCase()}
+                              </span>
 
-                        <span
-                          className={`inline-flex items-center rounded-full border px-2 py-1 text-[10px] ${getStatusClasses(
-                            item.status
-                          )}`}
-                        >
-                          <span className="mr-1 text-[8px]">●</span>
-                          {item.status}
-                        </span>
+                              <span
+                                className={`inline-flex items-center rounded-full px-3 h-7.5 text-[12px] font-normal border ${getStatusClasses(
+                                  item.status
+                                )}`}
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-current opacity-70" />
+                                {item.status}
+                              </span>
+                            </div>
+
+                            <h4 className="font-normal text-(--dark1) mt-2 text-[20px]">
+                              {item.title}
+                            </h4>
+
+                            <div className="flex justify-between mt-2 text-[14px] font-normal gap-3 flex-wrap">
+                              <span className="text-(--dark2)">
+                                ID: {item.orderId}
+                              </span>
+
+                              <div className="flex items-center gap-1">
+                                <span className="text-(--dark2)">
+                                  Delivery:
+                                </span>
+                                <span className="text-(--dark1)">
+                                  {item.delivery}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-
-                      <p className="text-[14px] font-medium text-[#35353C]">
-                        {item.title}
-                      </p>
-
-                      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[10px] text-[#7C7C88]">
-                        <span>ID: {item.orderId}</span>
-                        <span>{item.delivery}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+                    ) : (
+                      <div className="relative h-px bg-[#F5F5F5] w-full mt-4" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

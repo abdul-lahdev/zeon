@@ -36,6 +36,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import LogoutModal from "./LogoutModal";
 
 const linkUrl = [
   {
@@ -114,7 +115,7 @@ const notifications = [
 ];
 export default function Header() {
   const [active, setActive] = useState(false);
-
+  const [open, setOpen] = useState(false);
   return (
     <>
       <header className="bg-(--grey2) min-h-22.5 rounded-[24px] py-2 px-5 flex items-center justify-between">
@@ -247,15 +248,23 @@ export default function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setOpen(true)}>
+                    Logout
+                  </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </div>
       </header>
+      <LogoutModal
+        open={open}
+        onOpenChange={setOpen}
+        onConfirm={() => {
+          console.log("delete");
+          setOpen(false);
+        }}
+      />
     </>
   );
 }
