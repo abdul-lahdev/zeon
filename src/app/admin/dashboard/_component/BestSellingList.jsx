@@ -40,7 +40,7 @@ export function BestSellingList() {
   return (
     <Card className="w-full rounded-[32px] pt-4 border-none shadow-none ">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 border-b-2 border-(--grey5)">
-        <CardTitle className="text-[24px] font-normal text-(--dark1)">
+        <CardTitle className="text-[20px] md:text-[24px] font-normal text-(--dark1)">
           Best Selling
         </CardTitle>
         <Select defaultValue="year">

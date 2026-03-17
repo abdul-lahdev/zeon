@@ -64,7 +64,7 @@ export default function UpcomingDeliveries() {
     <>
       <Card className="flex-1 rounded-[32px] border-none pt-4 shadow-none h-full  overflow-hidden">
         <CardHeader className="flex flex-row items-center justify-between border-b-2 pb-3  border-[#F5F5F5]">
-          <CardTitle className="text-[24px] font-normal text-(--dark1) ">
+          <CardTitle className="text-[20px] md:text-[24px] font-normal text-(--dark1) ">
             Upcoming Deliveries
           </CardTitle>
         </CardHeader>
@@ -89,7 +89,7 @@ export default function UpcomingDeliveries() {
                 <ChevronRight size={16} className="text-(--dark1) rotate-90" />
               </div>
             </div>
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-4 gap-3 overflow-x-scroll no-scrollbar">
               {days.map((d, i) => (
                 <div
                   key={i}

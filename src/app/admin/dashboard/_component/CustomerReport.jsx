@@ -10,7 +10,7 @@ const COLORS = ["#0AAE78", "#EC3235"];
 export const CustomerReport = () => (
   <Card className="flex-1 pt-4 rounded-[32px] border-none shadow-none  overflow-hidden">
     <CardHeader className="flex flex-row items-center justify-between border-b-2 pb-3  border-[#F5F5F5]">
-      <CardTitle className="text-[24px] font-normal text-(--dark1) ">
+      <CardTitle className="text-[20px] md:text-[24px] font-normal text-(--dark1) ">
         Customer Report
       </CardTitle>
     </CardHeader>

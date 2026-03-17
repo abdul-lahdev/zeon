@@ -73,11 +73,11 @@ export default function OrderHistoryTable() {
   return (
     <div className="bg-white rounded-[24px] p-6">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col md:flex-row justify-between gap-3 items-start md:items-center mb-6">
         <h2 className="text-(--dark1) text-[24px] font-normal">
           Order History
         </h2>
-        <div className="flex gap-2">
+        <div className="flex items-center justify-between md:justify-end w-full md:w-fit gap-2">
           <Button
             variant="outline"
             size="sm"

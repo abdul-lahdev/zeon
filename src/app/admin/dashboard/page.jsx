@@ -54,7 +54,7 @@ export default function Page() {
       <CommonLayout>
         <section className="bg-(--grey2) rounded-[24px] p-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-(--dark3) text-[48px] font-normal">
+            <h1 className="text-(--dark3) text-[30px] md:text-[30px] lg:text-[40px] font-normal">
               Dashboard
             </h1>
             <div className="relative">
@@ -63,12 +63,12 @@ export default function Page() {
               </span>
               <Input
                 placeholder="Search"
-                className="rounded-[16px] w-109 h-14 pr-13 "
+                className="rounded-[16px] w-40 md:w-60 lg:w-109 h-14 pr-13 "
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_438px] gap-4 mt-3">
+          <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-[1fr_438px] gap-4 mt-3">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
               {dashboardData.map((item, index) => (
                 <div key={index} className="bg-white rounded-[24px] py-3 px-5">
@@ -85,7 +85,7 @@ export default function Page() {
                   </div>
                   <div className="mt-6 flex justify-between ">
                     <div>
-                      <h2 className="text-(--dark1) text-[40px] font-normal">
+                      <h2 className="text-(--dark1) text-[30px] md:text-[40px] font-normal">
                         {item.value.includes("/") ? (
                           <>
                             {/* Pehla part (e.g., 22) */}
@@ -145,7 +145,7 @@ export default function Page() {
               ))}
             </div>
             <div className="bg-white bg-[url(/images/dashboard/Glow.png)] rounded-[32px] bg-cover bg-no-repeat bg-center p-5 border-2 border-[#FFFFFF80]">
-              <h1 className="text-(--dark1) text-[32px] font-normal">
+              <h1 className="text-(--dark1) text-[28px] md:text-[32px] font-normal">
                 Place your upcoming order
               </h1>
               <p className="text-(--dark1) text-[14px] font-normal">

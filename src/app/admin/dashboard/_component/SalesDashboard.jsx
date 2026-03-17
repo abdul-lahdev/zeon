@@ -63,11 +63,11 @@ const products = [
 export default function SalesDashboard() {
   return (
     <Card className="flex-1 rounded-[32px] border-none pt-4 shadow-none overflow-hidden">
-      <CardHeader className="flex flex-row items-center justify-between border-b-2 pb-3  border-[#F5F5F5]">
-        <CardTitle className="text-[24px] font-normal text-(--dark1) ">
+      <CardHeader className="flex flex-col gap-3 md:flex-row items-start md:items-center justify-between border-b-2 pb-3  border-[#F5F5F5]">
+        <CardTitle className="text-[20px] md:text-[24px] font-normal text-(--dark1) ">
           Sales Graph
         </CardTitle>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center gap-3 justify-between md:justify-end w-full md:w-fit'>
           <div className="flex items-center gap-2">
             <span className="size-2 rounded-full bg-(--red1)"></span>
             <span className="text-[16px] font-normal text-(--dark1)">Income</span>

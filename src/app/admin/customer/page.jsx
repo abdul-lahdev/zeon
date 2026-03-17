@@ -12,7 +12,7 @@ export default function Page() {
       <CommonLayout>
         <div className="bg-(--grey2) rounded-[24px] p-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-(--dark3) text-[48px] font-normal">
+            <h1 className="text-(--dark3) text-[30px] md:text-[30px] lg:text-[40px] font-normal">
               Customers
             </h1>
             <div className="flex items-center gap-3">
@@ -22,7 +22,7 @@ export default function Page() {
                 </span>
                 <Input
                   placeholder="Search"
-                  className="rounded-[16px] w-109 h-14 pr-13 "
+                  className="rounded-[16px] w-50 lg:w-60 xl:w-109 h-14 pr-13 "
                 />
               </div>
               <Link href="/admin/customer/add">
