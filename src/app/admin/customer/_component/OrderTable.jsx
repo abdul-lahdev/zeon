@@ -30,7 +30,7 @@ export default function OrderTable() {
   return (
     <div className="w-full bg-white rounded-[24px] p-5">
       <div className="flex items-center justify-between mb-5">
-        <h1 className="text-[24px] font-normal text-(--dark1)">Orders</h1>
+        <h1 className="text-[18px] md:text-[24px] font-normal text-(--dark1)">Orders</h1>
         <div className="flex items-center gap-3">
           <Button className="rounded-[10px]" variant="secondary">
             {" "}

@@ -49,7 +49,7 @@ const GridView = ({ paginatedData }) => {
           setOpen(false);
         }}
       />
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
         {paginatedData.map((item) => (
           <div
             key={item.id}
@@ -64,15 +64,15 @@ const GridView = ({ paginatedData }) => {
                   </Avatar>
 
                   <div>
-                    <h1>{item.name}</h1>
+                    <h1 className='text-[15px] md::text-[20px]'>{item.name}</h1>
 
                     {item.status === "Active" ? (
-                      <span className="bg-(--green2) h-6.5 px-2 border border-(--green1) rounded-[9px] flex items-center gap-1 w-max text-[14px] font-normal text-(--green1)">
+                      <span className="bg-(--green2) h-5.5 md:h-6.5 px-2 border border-(--green1) rounded-[9px] flex items-center gap-1 w-max text-[10px] mt-1 md:mt-0 md:text-[14px] font-normal text-(--green1)">
                         <span className="size-1.5 rounded-full block bg-(--green1)"></span>
                         Active
                       </span>
                     ) : (
-                      <span className="bg-(--red3) h-6.5 px-2 border border-(--red2) rounded-[9px] flex items-center gap-1 w-max text-[14px] font-normal text-(--red2)">
+                      <span className="bg-(--red3) h-5.5 md:h-6.5 px-2 border border-(--red2) rounded-[9px] flex items-center gap-1 w-max text-[10px] mt-1 md:mt-0 md:text-[14px] font-normal text-(--red2)">
                         <span className="size-1.5 rounded-full block bg-(--red2)"></span>
                         Inactive
                       </span>
@@ -83,8 +83,8 @@ const GridView = ({ paginatedData }) => {
                 <div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <div className="size-11 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
-                        <EllipsisVertical />
+                      <div className="size-7 md:size-11 p-1.5 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
+                        <EllipsisVertical  />
                       </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
@@ -102,7 +102,7 @@ const GridView = ({ paginatedData }) => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 mt-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5 md:mt-3">
                 <div
                   onClick={() => handleCopy(item.phone, "Phone number")}
                   className="bg-(--grey5) w-full flex items-center justify-center gap-3 rounded-[8px] border border-(--grey4) min-h-[36px] cursor-pointer hover:opacity-80 transition-all active:scale-95"

@@ -71,7 +71,7 @@ function InfoPill({ text }) {
     return (
         <div className="flex items-center justify-between gap-2 rounded-[12px] bg-(--grey5) px-3 py-2.5">
             <div className="flex min-w-0 items-center gap-2">
-                <span className="text-(--dark1) text-[16px] font-medium ">{text}</span>
+                <span className="text-(--dark1) text-[12px] md:text-[16px] font-medium ">{text}</span>
             </div>
             <CopyButton text={text} />
         </div>
@@ -80,9 +80,9 @@ function InfoPill({ text }) {
 
 function DetailRow({ label, value }) {
     return (
-        <div className="grid grid-cols-[1fr_2fr] gap-4 space-y-4 ">
-            <span className="text-[18px] font-normal text-(--dark2)">{label}</span>
-            <span className="text-[18px] font-medium text-(--dark1)">{value}</span>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] space-y-0 md:space-y-4 mb-3 md:mb-0 ">
+            <span className="text-[16px] md:text-[18px] font-normal text-(--dark2)">{label}</span>
+            <span className="text-[16px] md:text-[18px] font-medium text-(--dark1)">{value}</span>
         </div>
     );
 }
@@ -207,7 +207,7 @@ export default function CustomerInformation() {
         <div className="w-full rounded-[24px]  bg-white h-full">
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b-2 border-(--grey5)">
-                <h3 className="text-[24px] font-normal text-(--dark1)">
+                <h3 className="text-[18px] md:text-[24px] font-normal text-(--dark1)">
                     Customer Information
                 </h3>
 
@@ -222,14 +222,14 @@ export default function CustomerInformation() {
             </div>
 
             {/* Customer block */}
-            <div className="mt-3 flex gap-3 px-4 ">
-                <Avatar className="size-24 rounded-[24px]">
+            <div className="mt-3 flex flex-col md:flex-row gap-3 px-4 ">
+                <Avatar className="size-18 md:size-24 rounded-[24px]">
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
                 <div >
-                    <h2 className="text-[32px] font-normal  text-(--dark1)">
+                    <h2 className="text-[22px] md:text-[32px] font-normal  text-(--dark1)">
                         {customerData.name}
                     </h2>
 
@@ -240,7 +240,7 @@ export default function CustomerInformation() {
             </div>
 
             {/* Contact pills */}
-            <div className="mt-4 grid grid-cols-2 gap-2 border-b-2 border-(--grey5) px-4 p-4">
+            <div className="mt-2 md:mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 border-b-2 border-(--grey5) p-4">
                 <InfoPill text={customerData.phone} />
                 <InfoPill text={customerData.email} />
             </div>

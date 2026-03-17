@@ -30,7 +30,7 @@ export default function RevenueCards() {
 
     return (
         <>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5">
                 {cardData.map((item, index) => (
                     <div
                         key={index}
@@ -59,7 +59,7 @@ export default function RevenueCards() {
                             ) : ''}
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h1 className="text-(--dark1) text-[40px] font-normal">
+                            <h1 className="text-(--dark1) text-[30px] md:text-[40px] font-normal">
                                 {item.total}
                             </h1>
                             {item.name === 'Payment Behavior' ? null : <span className='text-(--dark2) text-[18px] font-normal'>This Year</span>}

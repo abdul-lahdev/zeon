@@ -24,12 +24,12 @@ export default function TodaysDeliveries() {
   return (
     <section className="w-full overflow-hidden rounded-[24px]  bg-white">
       <div className="border-b border-(--grey5) px-6 py-4 sm:px-7">
-        <h2 className="text-[24px] font-normal  text-(--dark1)">
+        <h2 className="text-[18px] md:text-[24px] font-normal  text-(--dark1)">
           Todays Deliveries
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 p-5 md:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4 p-5 ">
         {deliveries.map((item, index) => (
           <DeliveryCard key={`${item.id}-${index}`} item={item} />
         ))}
@@ -51,7 +51,7 @@ function DeliveryCard({ item }) {
     >
       {/* top row */}
       <div className="mb-4 flex items-start justify-between gap-3">
-        <span className="inline-flex h-9 items-center rounded-[8px] bg-white px-3 border border-(--grey5) text-[18px] font-normal text-(--dark2) backdrop-blur-sm">
+        <span className="inline-flex h-8 md:h-9 items-center rounded-[8px] bg-white px-3 border border-(--grey5) text-[12px] md:text-[18px] font-normal text-(--dark2) backdrop-blur-sm">
           {item.time}
         </span>
 
@@ -60,28 +60,28 @@ function DeliveryCard({ item }) {
 
       {/* company */}
       <div className="space-y-2">
-        <h3 className="text-[24px] font-normal text-(--dark1)">
+        <h3 className="text-[20px] md:text-[24px] font-normal text-(--dark1)">
           {item.company}
         </h3>
 
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[18px] font-normal text-(--dark1)">ID: {item.id}</p>
-          <p className="text-[18px] font-normal text-(--dark2)">
+          <p className="text-[16px] md:text-[18px] font-normal text-(--dark1)">ID: {item.id}</p>
+          <p className="text-[16px] md:text-[18px] font-normal text-(--dark2)">
             Delivery: <span className="text-(--dark1)">{item.deliveryText}</span>
           </p>
         </div>
       </div>
 
       {/* actions */}
-      <div className="mt-5 flex items-center gap-3">
-        <Button className="h-12.5 flex-1 rounded-[16px] bg-(--green1) text-[20px] font-normal text-white  hover:bg-(--green4)">
+      <div className="mt-5 flex flex-col md:flex-row items-center gap-3">
+        <Button className="h-12.5 w-full flex-1 rounded-[16px] bg-(--green1) text-[16px] md:text-[20px] font-normal text-white  hover:bg-(--green4)">
           <CheckCircle2 size={24} className="text-white" />
           Mark as completed
         </Button>
 
         <Button
           variant="outline"
-          className="h-12.5 min-w-24.5 border border-(--grey4) rounded-[16px] border-(--grey4) bg-white px-5 text-[20px] font-normal text-(--dark1) hover:bg-white/50"
+          className="h-[unset] md:h-12.5 min-w-full md:min-w-24.5 border rounded-[16px] border-(--grey4) bg-white px-5 text-[16px] md:text-[20px] font-normal text-(--dark1) hover:bg-white/50"
         >
           Details
         </Button>
@@ -95,7 +95,7 @@ function StatusBadge({ status }) {
 
   return (
     <div
-      className={`inline-flex h-[39px] items-center rounded-[12px] border px-4 text-[18px] font-normal backdrop-blur-sm ${
+      className={`inline-flex h-8 items-center rounded-[12px] border px-4 text-[12px] md:text-[18px] font-normal backdrop-blur-sm ${
         isPaid
           ? "border-(--green1) bg-(--green2) text-(--green1)"
           : "border-(--red2) bg-(--red3) text-(--red2)"
