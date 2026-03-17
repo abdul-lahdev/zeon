@@ -22,7 +22,7 @@ export default function Page() {
   return (
     <CommonLayout>
       <div className="bg-(--grey2) rounded-[24px] p-5">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row items-start gap-3 md:items-center justify-between">
           <div className="flex gap-2">
             <Link href="/admin/product">
               <div className="size-7 flex items-center justify-center rounded-full bg-white">
@@ -92,7 +92,7 @@ export default function Page() {
             )}
           </div>
         </div>
-        <section className="mt-5 w-[85%] mx-auto">
+        <section className="mt-5 w-full md:w-full lg:w-[85%] mx-auto">
           <AddNewProductForm
             setCurrentStep={setCurrentStep}
             currentStep={currentStep}

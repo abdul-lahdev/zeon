@@ -88,7 +88,7 @@ export default function AddNewCustomerForm({ nextStep, prevStep, setCurrentStep,
                 <div className="flex flex-wrap gap-4">
                   <label
                     htmlFor="logo-upload"
-                    className="group relative flex h-50 w-[320px] cursor-pointer flex-col items-center justify-center rounded-[16px] border border-dashed border-(--blue2) bg-white transition hover:bg-[#F5FBFF]"
+                    className="group relative flex h-50 w-full md:w-[320px] cursor-pointer flex-col items-center justify-center rounded-[16px] border-2 border-dashed border-(--blue2) bg-white transition hover:bg-[#F5FBFF]"
                   >
                     <input
                       id="logo-upload"
@@ -130,7 +130,7 @@ export default function AddNewCustomerForm({ nextStep, prevStep, setCurrentStep,
                   Customer Details
                 </h3>
 
-                <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-5 ">
                   <Field
                     label="Business name"
                     name="businessName"
@@ -449,7 +449,7 @@ function AnimatedStepper({ currentStep, progressWidth }) {
 
                 <span
                   className={[
-                    "text-[12px] font-medium",
+                    "text-[12px] font-medium hidden md:block",
                     isActive || isCompleted ? "text-[#374151]" : "text-[#6B7280]",
                   ].join(" ")}
                 >

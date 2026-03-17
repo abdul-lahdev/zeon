@@ -244,3 +244,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.filepond--root .filepond--credits[style] {
+  display: none !important;
+
+}

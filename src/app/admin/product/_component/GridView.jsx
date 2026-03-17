@@ -35,7 +35,7 @@ const GridView = ({ paginatedData }) => {
           setOpen(false);
         }}
       />
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
         {paginatedData.map((order) => (
           <div
             key={order.id}
@@ -46,12 +46,13 @@ const GridView = ({ paginatedData }) => {
               alt="Picture of the author"
               width={500}
               height={500}
+              className="w-full"
             />
 
             <div className="mt-3 p-4">
               <div className="flex items-center justify-between">
                 <span
-                  className={`px-3 py-1 h-6.5 rounded-[9px] border text-[14px] font-normal flex w-fit items-center gap-1.5
+                  className={`px-3 py-1 h-5.5 md:h-6.5 rounded-[9px] border text-[14px] font-normal flex w-fit text-[10px] mt-1 md:mt-0 md:text-[14px] items-center gap-1.5
                 ${
                   order.availability === "Available"
                     ? "bg-(--green2) text-(--green1) border-(--green1)"
@@ -75,7 +76,7 @@ const GridView = ({ paginatedData }) => {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <div className="size-11 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
+                    <div className="size-7 md:size-11 p-1.5 bg-(--grey5) rounded-full flex items-center justify-center cursor-pointer">
                       <EllipsisVertical size={20} className="text-(--dark1)" />
                     </div>
                   </DropdownMenuTrigger>
@@ -92,11 +93,11 @@ const GridView = ({ paginatedData }) => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
-              <h1 className="text-(--dark1) text-[25px] font-normal">
+              <h1 className="text-(--dark1) mt-3 text-[20px] md:text-[25px] font-normal">
                 MAXX PRO 600
               </h1>
 
-              <div className="grid grid-cols-2 gap-3 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
                 <Button
                   variant="outline"
                   className="w-full bg-(--grey5) border-none"

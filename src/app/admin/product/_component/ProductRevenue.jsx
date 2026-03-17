@@ -30,7 +30,7 @@ export default function ProductRevenue() {
 
     return (
         <>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 {cardData.map((item, index) => (
                     <div
                         key={index}
@@ -62,7 +62,7 @@ export default function ProductRevenue() {
                             <h1 className="text-(--dark1) text-[40px] font-normal">
                                 {item.total}
                             </h1>
-                            {item.name === 'Payment Behavior' ? null : <span className='text-(--dark2) text-[18px] font-normal'>This Year</span>}
+                            {item.name === 'Conversion'||'Orders Completed' ? null : <span className='text-(--dark2) text-[18px] font-normal'>This Year</span>}
                         </div>
                     </div>
                 ))}

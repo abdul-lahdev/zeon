@@ -60,16 +60,16 @@ const ProductDashboard = () => {
       <div className="bg-white rounded-[32px] p-4">
         {/* --- FILTERS SECTION --- */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div className="flex flex-wrap items-center gap-3 pl-5">
-            <span className="text-(--dark2) text-[20px] font-normal mr-3">
+          <div className="flex flex-wrap items-center gap-3 pl-0 lg:pl-0 xl:pl-5">
+            <span className="text-(--dark2) text-[20px] font-normal mr-3 w-full lg:w-full xl:w-fit">
               Filters:
             </span>
-            <div className="flex items-center gap-3">
-              <span className="text-(--dark2) text-[18px] font-normal">
+            <div className="flex items-center gap-3 w-full md:w-fit">
+              <span className="text-(--dark2) text-[16px] text-nowrap md:text-[18px] font-normal">
                 Status:
               </span>
               <Select defaultValue="neutral">
-                <SelectTrigger className="w-32.5 bg-(--grey5) border border-(--grey4) h-11">
+                <SelectTrigger className="w-full md:w-32.5 bg-(--grey5) border border-(--grey4) h-11">
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
@@ -85,12 +85,12 @@ const ProductDashboard = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-(--dark2) text-[18px] font-normal">
+            <div className="flex items-center gap-3 w-full md:w-fit">
+              <span className="text-(--dark2) text-[16px] text-nowrap md:text-[18px] font-normal">
                 Date Range:
               </span>
               <Select defaultValue="neutral">
-                <SelectTrigger className="w-32.5 bg-(--grey5) border border-(--grey4) h-11">
+                <SelectTrigger className="w-full md:w-32.5 bg-(--grey5) border border-(--grey4) h-11">
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
@@ -107,12 +107,12 @@ const ProductDashboard = () => {
               </Select>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-(--dark2) text-[18px] font-normal">
+            <div className="flex items-center gap-3 w-full md:w-fit">
+              <span className="text-(--dark2) text-[16px] text-nowrap md:text-[18px] font-normal">
                 Delivery:
               </span>
               <Select defaultValue="neutral">
-                <SelectTrigger className="w-25 bg-(--grey5) border border-(--grey4) h-11">
+                <SelectTrigger className="w-full md:w-25 bg-(--grey5) border border-(--grey4) h-11">
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
@@ -126,12 +126,12 @@ const ProductDashboard = () => {
               </Select>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-(--dark2) text-[18px] font-normal">
+            <div className="flex items-center gap-3 w-full md:w-fit">
+              <span className="text-(--dark2) text-[16px] text-nowrap md:text-[18px] font-normal">
                 Payment:
               </span>
               <Select defaultValue="neutral">
-                <SelectTrigger className="w-27.25 bg-(--grey5) border border-(--grey4) h-11">
+                <SelectTrigger className="w-full md:w-27.25 bg-(--grey5) border border-(--grey4) h-11">
                   <SelectValue placeholder="Select a Value" />
                 </SelectTrigger>
                 <SelectContent>
@@ -203,62 +203,70 @@ const ProductDashboard = () => {
       </div>
 
       {/* pagination section */}
-      <div className="flex items-center ml-auto gap-4 p-4 w-fit rounded-lg">
-        <div className="bg-white rounded-2xl border-none h-14 flex items-center px-4 shadow-sm">
-          <span className="text-slate-500 text-sm mr-2 whitespace-nowrap">
-            Per Page:
-          </span>
-
-          <Select value={String(perPage)} onValueChange={handlePerPageChange}>
-            <SelectTrigger className="border-none shadow-none focus:ring-0 text-slate-700 font-medium w-[60px] p-0 h-auto">
-              <SelectValue placeholder="25" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="10">10</SelectItem>
-              <SelectItem value="25">25</SelectItem>
-              <SelectItem value="50">50</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <Pagination className="bg-white rounded-2xl h-14 px-4 shadow-sm w-auto">
-          <PaginationContent className="gap-2">
-            <PaginationItem>
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="inline-flex items-center justify-center w-8 h-8 disabled:opacity-40"
-              >
-                <ChevronLeft className="h-5 w-5 text-slate-600" />
-              </button>
-            </PaginationItem>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <PaginationItem key={page}>
-                <button
-                  onClick={() => handlePageChange(page)}
-                  className={`inline-flex items-center justify-center rounded-full w-10 h-10 text-sm ${currentPage === page
-                    ? "bg-[#f1f3f5] text-slate-900"
-                    : "text-slate-600 hover:bg-slate-100"
-                    }`}
-                >
-                  {page}
-                </button>
-              </PaginationItem>
-            ))}
-
-            <PaginationItem>
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="inline-flex items-center justify-center w-8 h-8 disabled:opacity-40"
-              >
-                <ChevronRight className="h-5 w-5 text-slate-600" />
-              </button>
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
+      <div className="flex items-center justify-between md:justify-end gap-3 p-4">
+            {/* Per Page */}
+            <div className="bg-white rounded-2xl h-14 flex items-center px-3 shadow-sm shrink-0">
+              <span className="text-slate-500 text-sm mr-2 whitespace-nowrap hidden md:block">
+                Per Page:
+              </span>
+    
+              <Select value={String(perPage)} onValueChange={handlePerPageChange}>
+                <SelectTrigger className="border-none shadow-none focus:ring-0 text-slate-700 font-medium w-[60px] p-0 h-auto">
+                  <SelectValue placeholder="25" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="10">10</SelectItem>
+                  <SelectItem value="25">25</SelectItem>
+                  <SelectItem value="50">50</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            {/* Pagination */}
+            <div className="w-full overflow-x-auto md:w-auto md:flex-none no-scrollbar">
+              <Pagination className="w-max">
+                <PaginationContent className="flex-nowrap gap-2 rounded-2xl bg-white px-4 py-2 shadow-sm">
+    
+                  <PaginationItem className="shrink-0">
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full disabled:opacity-40"
+                    >
+                      <ChevronLeft className="h-5 w-5 text-slate-600" />
+                    </button>
+                  </PaginationItem>
+    
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <PaginationItem key={page} className="shrink-0">
+                      <button
+                        onClick={() => handlePageChange(page)}
+                        className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm transition-colors ${currentPage === page
+                          ? "bg-[#f1f3f5] text-slate-900"
+                          : "text-slate-600 hover:bg-slate-100"
+                          }`}
+                      >
+                        {page}
+                      </button>
+                    </PaginationItem>
+                  ))}
+    
+                  <PaginationItem className="shrink-0">
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full disabled:opacity-40"
+                    >
+                      <ChevronRight className="h-5 w-5 text-slate-600" />
+                    </button>
+                  </PaginationItem>
+    
+                </PaginationContent>
+              </Pagination>
+            </div>
+    
+    
+    
+          </div>
     </>
   );
 };

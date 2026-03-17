@@ -58,13 +58,13 @@ const GridView = ({ paginatedData }) => {
             <div className="p-4 border-b border-(--grey5)">
               <div className="flex justify-between">
                 <div className="flex items-center gap-2">
-                  <Avatar className="size-[64px]">
+                  <Avatar className="size-16">
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
 
                   <div>
-                    <h1 className='text-[15px] md::text-[20px]'>{item.name}</h1>
+                    <h1 className='text-[15px] md:text-[20px]'>{item.name}</h1>
 
                     {item.status === "Active" ? (
                       <span className="bg-(--green2) h-5.5 md:h-6.5 px-2 border border-(--green1) rounded-[9px] flex items-center gap-1 w-max text-[10px] mt-1 md:mt-0 md:text-[14px] font-normal text-(--green1)">
