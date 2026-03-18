@@ -36,16 +36,16 @@ export default function Page() {
             <Button className="h-[48px] px-5">Save Changes</Button>
           </div>
           {/* <CustomerCards /> */}
-          <div className="mt-5 w-[80%] mx-auto bg-white p-3 rounded-[32px]">
+          <div className="mt-5 w-full md:w-full lg:w-[85%] mx-auto bg-white p-3 rounded-[32px]">
             <div className="min-h-screen ">
               <div className="overflow-hidden">
                 {/* --- TABS NAVIGATION --- */}
-                <div className="flex border-b border-slate-100 px-6 pt-4 gap-8 relative">
+                <div className="flex border-b border-slate-100 px-6 pt-4 gap-8 relative  overflow-x-auto">
                   {tabs.map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`pb-4 text-[18px] cursor-pointer font-regular transition-colors relative ${
+                      className={`pb-4 text-[18px] cursor-pointer font-regular transition-colors text-nowrap relative ${
                         activeTab === tab
                           ? "text-(--red1)"
                           : "text-(--dark1) hover:text-slate-700"
@@ -68,7 +68,7 @@ export default function Page() {
                 </div>
 
                 {/* --- TAB CONTENT WITH ANIMATION --- */}
-                <div className="p-8">
+                <div className="p-3 lg:p-8">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeTab}

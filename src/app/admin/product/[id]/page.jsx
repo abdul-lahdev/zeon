@@ -12,7 +12,7 @@ export default function Page() {
     <>
       <CommonLayout>
         <div className="bg-(--grey2) rounded-[24px] p-5">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-start gap-3 md:gap-0 md:items-center justify-between">
             <div className="flex gap-2 items-start">
               <Link href="/admin/product">
                 <div className="size-7 flex items-center justify-center rounded-full bg-white">
@@ -20,7 +20,7 @@ export default function Page() {
                 </div>
               </Link>
               <div>
-                <h1 className="text-(--dark1) text-[24px] font-normal">
+                <h1 className="text-(--dark1) text-[18px] md:text-[24px] font-normal">
                   Product Details
                 </h1>
                 <p className="text-(--dark1)">
@@ -28,15 +28,12 @@ export default function Page() {
                 </p>
               </div>
             </div>
-            <Button
-              variant="secondary"
-              className="h-14.5 flex items-center gap-2 text-[20px] font-normal text-[#3F434D]"
-            >
+            <Button variant="secondary" className='h-10 md:h-10 lg:h-14.5 w-full md:w-fit  flex items-center gap-2 text-[14px] md:text-[14px] lg:text-[20px] font-normal text-[#3F434D]'>
               <SquarePen size={24} className="text-(--dark1)" />
               Edit
             </Button>
           </div>
-          <div className="mt-5 grid grid-cols-[520px_1fr] gap-5">
+          <div className="mt-5 grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-[520px_1fr] gap-5">
             <div>
               <ProductDetails />
             </div>

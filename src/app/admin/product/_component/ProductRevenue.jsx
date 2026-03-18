@@ -1,4 +1,5 @@
 import {
+    ChartLine,
     CircleAlert,
     UserCheck,
     UserPlus,
@@ -30,7 +31,7 @@ export default function ProductRevenue() {
 
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5">
                 {cardData.map((item, index) => (
                     <div
                         key={index}
@@ -40,29 +41,31 @@ export default function ProductRevenue() {
                             <h2 className="text-(--dark1) text-[20px] font-normal">
                                 {item.name}
                             </h2>
-                            {item.name === "Total Revenue" ? (
+                            {item.name === "Total Sales" ? (
                                 <div className="size-10 rounded-full bg-[#50C5FF33] flex items-center justify-center">
-                                    <Users size={24} className="text-[#21A6E8]" />
+                                    <ChartLine size={24} className="text-[#21A6E8]" />
                                 </div>
-                            ) : item.name === "Complete Orders" ? (
-                                <div className="size-10 rounded-full bg-[#0AAE781A] flex items-center justify-center">
-                                    <UserCheck size={24} className="text-[#0AAE78]" />
-                                </div>
-                            ) : item.name === "Total Orders" ? (
+                            ) : item.name === "Total Revenue" ? (
                                 <div className="size-10 rounded-full bg-[#F5880B1A] flex items-center justify-center">
-                                    <UserRoundMinus size={24} className="text-[#F5880B]" />
+                                    <ChartLine size={24} className="text-[#F5880B]" />
                                 </div>
-                            ) : item.name === "Payment Behavior" ? (
+                            ) : item.name === "Conversion" ? (
                                 <div className="size-10 rounded-full bg-[#8C37FD1A] flex items-center justify-center">
-                                    <UserPlus size={24} className="text-[#8C37FD]" />
+
+                                    <ChartLine size={24} className="text-[#8C37FD]" />
+                                </div>
+                            ) : item.name === "Orders Completed" ? (
+                                <div className="size-10 rounded-full bg-[#0AAE781A] flex items-center justify-center">
+
+                                    <ChartLine size={24} className="text-[#0AAE78]" />
                                 </div>
                             ) : ''}
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h1 className="text-(--dark1) text-[40px] font-normal">
+                            <h1 className="text-(--dark1) text-[30px] md:text-[40px] font-normal">
                                 {item.total}
                             </h1>
-                            {item.name === 'Conversion'||'Orders Completed' ? null : <span className='text-(--dark2) text-[18px] font-normal'>This Year</span>}
+                            {item.name === 'Conversion' || 'Orders Completed' ? null : <span className='text-(--dark2) text-[18px] font-normal'>This Year</span>}
                         </div>
                     </div>
                 ))}

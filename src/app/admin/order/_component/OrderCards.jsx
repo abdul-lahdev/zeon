@@ -1,14 +1,9 @@
-import { CardAction } from "@/components/ui/card";
 import {
   CircleAlert,
   CircleCheck,
   HandCoins,
   Loader,
   ShoppingBag,
-  UserCheck,
-  UserPlus,
-  UserRoundMinus,
-  Users,
 } from "lucide-react";
 
 export default function OrderCards() {
@@ -34,7 +29,7 @@ export default function OrderCards() {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-5 mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-3">
         {cardData.map((item, index) => (
           <div
             key={index}

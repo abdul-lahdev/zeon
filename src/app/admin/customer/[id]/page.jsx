@@ -14,7 +14,7 @@ export default function Page() {
             <CommonLayout>
                 <div className="bg-(--grey2) rounded-[24px] p-5">
                     <div className="flex flex-col md:flex-row items-start gap-3 md:gap-0 md:items-center justify-between">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 items-start">
                             <Link href='/admin/customer'>
                                 <div className="size-7 flex items-center justify-center rounded-full bg-white">
                                     <ChevronLeft size={20} />

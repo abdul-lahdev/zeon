@@ -54,7 +54,7 @@ const ProfileSettings = () => {
           Upload Logo
         </h3>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
           <div className="w-20 h-20 rounded-[12px] overflow-hidden border bg-[#F4F4F5] flex items-center justify-center">
             {profileImage ? (
               <img

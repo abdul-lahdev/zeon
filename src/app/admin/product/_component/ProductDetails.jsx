@@ -42,9 +42,9 @@ const customerData = {
 
 function DetailRow({ label, value }) {
     return (
-        <div className="grid grid-cols-[1fr_2fr] gap-4 space-y-4 ">
-            <span className="text-[18px] font-normal text-(--dark2)">{label}</span>
-            {label === 'Product Type' ? null : <span className="text-[18px] font-medium text-(--dark1)">{value}</span>}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] space-y-0 md:space-y-4 mb-3 md:mb-0 ">
+            <span className="text-[16px] md:text-[18px] font-normal text-(--dark2)">{label}</span>
+            {label === 'Product Type' ? null : <span className="text-[16px] md:text-[18px] font-medium text-(--dark1)">{value}</span>}
             {label === 'Product Type' && <span
                 className={`px-3 py-1 h-6.5 rounded-[9px] border text-[14px] font-normal flex w-fit items-center gap-1.5
                 ${value === "In-Stock"
@@ -78,21 +78,21 @@ export default function ProductDetails() {
               <div className="w-full rounded-[24px]  bg-white ">
                 {/* Header */}
                 <div className=" px-5 py-3 border-b-2 border-(--grey5)">
-                    <h3 className="text-[24px] font-normal text-(--dark1)">
+                    <h3 className="text-[18px] md:text-[24px] font-normal text-(--dark1)">
                         Product Details
                     </h3>
 
 
                 </div>
 
-                <div className="mt-3 flex gap-3 px-5 ">
-                    <Avatar className="size-24 rounded-[24px]">
+                <div className="mt-3 flex flex-col md:flex-row gap-3 px-4 ">
+                    <Avatar className="size-18 md:size-24 rounded-[24px]">
                         <AvatarImage src="/images/product/product.png" className='object-cover' />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
 
                     <div >
-                        <h2 className="text-[32px] font-normal  text-(--dark1)">
+                        <h2 className="text-[22px] md:text-[32px] font-normal  text-(--dark1)">
                             {customerData.name}
                         </h2>
 
@@ -106,7 +106,7 @@ export default function ProductDetails() {
                     <h1 className="text-[18px] font-medium text-(--dark2)">
                         Description
                     </h1>
-                    <p className='text-[18px] fonr-normal text-(--dark1)'>
+                    <p className='text-[16px] md:text-[18px] fonr-normal text-(--dark1)'>
                         Our elegant fragrance diffuser is ideal for large rooms and creates a perfect ambience with advanced micro-diffusion technology.
                     </p>
                 </div>

@@ -140,13 +140,13 @@ export default function InvoiceItemsTable() {
     <div className="w-full rounded-[28px] bg-white mt-5">
       {/* Filters */}
       <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">
-        <div className="relative w-full max-w-[240px]">
+        <div className="relative w-full md:max-w-60">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]" />
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search"
-            className="h-11 rounded-[14px] border-[#E9E9E9] bg-[#FAFAFA] pl-9 text-[14px] shadow-none focus-visible:ring-0"
+            className="h-11 w-full  rounded-[14px] border-[#E9E9E9] bg-[#FAFAFA] pl-9 text-[14px] shadow-none focus-visible:ring-0"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function InvoiceItemsTable() {
       <div className="overflow-x-auto mt-5">
         <div className="w-full">
           {/* Header */}
-          <div className="grid grid-cols-[2.2fr_1.1fr_1.2fr_1fr_1.1fr_1.1fr_1fr_80px] ">
+          <div className="grid grid-cols-[200px_131px_100px_100px_100px_100px_100px_80px]  md:grid-cols-[2.2fr_1.1fr_1.2fr_1fr_1.1fr_1.1fr_1fr_80px] ">
             {[
               "Product Name",
               "SKU",
@@ -194,7 +194,7 @@ export default function InvoiceItemsTable() {
               return (
                 <div
                   key={row.rowId}
-                  className={`grid grid-cols-[2.2fr_1.1fr_1.2fr_1fr_1.1fr_1.1fr_1fr_80px] items-center text-[14px] text-[#374151] ${index !== filteredRows.length ? "border-b border-[#ECECEC]" : ""
+                  className={`grid grid-cols-[200px_131px_100px_100px_100px_100px_100px_80px]  md:grid-cols-[2.2fr_1.1fr_1.2fr_1fr_1.1fr_1.1fr_1fr_80px] items-center text-[14px] text-[#374151] ${index !== filteredRows.length ? "border-b border-[#ECECEC]" : ""
                     }`}
                 >
                   <div className="px-4 py-4">

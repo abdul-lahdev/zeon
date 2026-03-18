@@ -191,8 +191,8 @@ export default function AddNewOrderForm({ nextStep, prevStep, setCurrentStep, cu
                   Shipping Details
                 </h3>
 
-                <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-                  <div className="space-y-1">
+                <div className="mt-4 grid grid-cols-1 gap-5 ">
+                  <div className="md:col-span-1 space-y-1">
                     <Label
                       htmlFor="shippingEmail"
                       className="text-[16px] font-normal text-(--dark2)"
@@ -208,7 +208,7 @@ export default function AddNewOrderForm({ nextStep, prevStep, setCurrentStep, cu
                     />
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="md:col-span-1 space-y-1">
                     <Label
                       htmlFor="shippingPhone"
                       className="text-[16px] font-normal text-(--dark2)"
@@ -223,7 +223,7 @@ export default function AddNewOrderForm({ nextStep, prevStep, setCurrentStep, cu
                       className="h-13 rounded-[12px] border border-(--grey4)"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="md:col-span-1 space-y-1">
                     <Label
                       htmlFor="shippingAddress"
                       className="text-[16px] font-normal text-(--dark2)"
@@ -238,7 +238,7 @@ export default function AddNewOrderForm({ nextStep, prevStep, setCurrentStep, cu
                       className="h-13 rounded-[12px] border border-(--grey4)"
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1 md:col-span-2">
                     <label htmlFor="billing" className="flex items-center gap-3">
 
                       <Checkbox id='billing' className='rounded-[8px] size-6 border-[#EDEDED] data-[state=checked]:bg-(--red1) data-[state=checked]:border-(--red1) data-[state=checked]:text-[white]' /> <span className="text-[18px] font-normal text-(--dark1)">Same as Billing  Details</span>
@@ -421,7 +421,7 @@ function AnimatedStepper({ currentStep, progressWidth }) {
 
                 <span
                   className={[
-                    "text-[12px] font-medium",
+                    "text-[12px] font-medium hidden md:block",
                     isActive || isCompleted ? "text-[#374151]" : "text-[#6B7280]",
                   ].join(" ")}
                 >

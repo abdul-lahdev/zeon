@@ -16,13 +16,13 @@ export default function Page() {
               Customers
             </h1>
             <div className="flex items-center justify-between md:justify-end w-full md:w-fit gap-3">
-              <div className="relative">
+              <div className="relative w-full">
                 <span className="absolute right-0 top-0 translate-y-3.5 -translate-x-4 opacity-50">
                   <Search size={24} className="text-(--dark1x)" />
                 </span>
                 <Input
                   placeholder="Search"
-                  className="rounded-[16px] w-50 lg:w-60 xl:w-109 h-14 pr-13 "
+                  className="rounded-[16px] w-full lg:w-60 xl:w-109 h-14 pr-13 "
                 />
               </div>
               <Link href="/admin/customer/add">

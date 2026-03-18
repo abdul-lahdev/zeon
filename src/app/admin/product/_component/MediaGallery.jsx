@@ -27,7 +27,7 @@ export default function MediaGallery() {
       <div className="bg-white rounded-[24px] ">
         <h2 className="text-[24px] font-normal text-(--dark1) px-6 py-4 border-b-2 border-(--grey5)">Media</h2>
 
-        <div className="grid grid-cols-5 gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:gird-cols-4 xl:grid-cols-5 gap-4 p-4">
           {images.map((img, i) => (
             <div
               key={i}
